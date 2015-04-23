@@ -1,19 +1,14 @@
 var app = angular.module('rtfmApp', ['firebase', 'ngRoute']); 
 
-app.config(['$routeProvider', function ($routeProvider) {
+app.constant('fb', {
+	url: 'https://boiling-inferno-8769.firebaseio.com/'
+})
+
+app.config(function ($routeProvider) {
 	$routeProvider
 	.when('/login', {
 		templateUrl: 'login/login.html',
 		controller: 'loginCtrl'
 	})
-
-	.when('/threads', {
-		templateUrl: 'templates/threads.html'
-	})
-
-	.when('/threads/:threadId', {
-		//code 
-	})
-
-	.otherwise({ redirectTo: '/templates/login.html' })
-}])
+	.otherwise('/login')
+})

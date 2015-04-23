@@ -1,10 +1,15 @@
-var app = angular.module('rtfmApp', ['firebase', 'ngRoute']); 
+var app = angular.module('rtfmApp'); 
 
-app.controller('loginCtrl', function($scope){
+app.controller('loginCtrl', function($scope, $location){
 	var username = $scope.username; 
 	
 	$scope.logMeIn = function(username){
 		console.log($scope.username); 
-		alert($scope.username); 
 	}
+
+	/*
+	$scope.apply(function(){
+		$location.path('/dashboard/' + user.uid)
+	})
+	*/
 })
